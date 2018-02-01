@@ -13,17 +13,11 @@ from ._version import __version__
 
 version = Version(__version__)
 
-# First, make an app
-
 app = Flask(__name__, instance_relative_config=True)
 lastuser = Lastuser()
 
-# Second, import the models and views
-
 from . import models, views  # NOQA
 from .models import db
-
-# Third, setup baseframe and assets
 
 assets['hgapp.js'][version] = 'js/app.js'
 assets['hgapp.css'][version] = 'css/app.css'
